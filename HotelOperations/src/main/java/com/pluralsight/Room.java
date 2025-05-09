@@ -1,12 +1,12 @@
 package com.pluralsight;
 
 public class Room {
-    private int beds;           // Number of beds in the room
-    private double rate;        // Price per night
-    private boolean occupied;   // True if the room is occupied
-    private boolean clean;      // True if the room is clean
+    private int beds;           //Number of beds in the room
+    private double rate;        //Price per night
+    private boolean occupied;   //True if the room is occupied
+    private boolean clean;      //True if the room is clean
 
-    // Constructor to create a room
+    //Constructor to create a room
     public Room(int beds, double rate, boolean occupied, boolean clean) {
         this.beds = beds;
         this.rate = rate;
@@ -14,12 +14,12 @@ public class Room {
         this.clean = clean;
     }
 
-    // Check if the room is available: not occupied AND clean
+    //Check if the room is available: not occupied AND clean
     public boolean isAvailable() {
         return !occupied && clean;
     }
 
-    // When a guest checks in, the room becomes occupied and dirty
+    //When a guest checks in, the room becomes occupied and dirty
     public void checkIn() {
         if (isAvailable()) {
             occupied = true;
@@ -30,7 +30,7 @@ public class Room {
         }
     }
 
-    // When a guest checks out, the room is no longer occupied but still dirty
+    //When a guest checks out, the room is no longer occupied but still dirty
     public void checkOut() {
         if (occupied) {
             occupied = false;
@@ -40,7 +40,7 @@ public class Room {
         }
     }
 
-    // Clean the room so it becomes available if not occupied
+    //Clean the room so it becomes available if not occupied
     public void cleanRoom() {
         clean = true;
         System.out.println("Room cleaned.");

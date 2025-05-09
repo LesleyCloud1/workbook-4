@@ -53,10 +53,10 @@ class RoomTest {
     public void cleanRoom_should_notClean_ifOccupied() {
         // Arrange
         Room room = new Room();
-        room.checkIn(); // Room is now dirty and occupied
+        room.checkIn(); //Room is now dirty and occupied
 
         // Act
-        room.cleanRoom(); // Should not clean because it's still occupied
+        room.cleanRoom(); //Should not clean because it's still occupied
 
         // Assert
         assertFalse(room.isClean(), "Room should remain dirty if cleaned while occupied.");
