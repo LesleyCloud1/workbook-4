@@ -12,7 +12,7 @@ public class Card {
     }
 
     public String getSuit() {
-        // only return the suit if the card is face up
+        //only return the suit if the card is face up
         if (isFaceUp) {
             return suit;
         } else {

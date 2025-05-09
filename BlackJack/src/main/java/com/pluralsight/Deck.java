@@ -10,8 +10,8 @@ public class Deck {
         String[] suits = {"Hearts", "Spades", "Diamonds", "Clubs"};
         String[] values = {"2", "3", "4", "5", "6", "7", "8",
                 "9", "10", "J", "Q", "K", "A"};
-        // these loops create all the cards in the deck
-        // and add them to the ArrayList
+        //these loops create all the cards in the deck
+        //and add them to the ArrayList
         for (String suit : suits) {
             for (String value : values) {
                 Card card = new Card(suit, value);
@@ -25,7 +25,7 @@ public class Deck {
     }
 
     public Card deal() {
-        // deal the top card (if there are any cards left
+        //deal the top card, if there are any cards left
         if (cards.size() > 0) {
             Card card = cards.remove(0);
             return card;
@@ -35,6 +35,6 @@ public class Deck {
     }
 
     public int getSize() {
-        return cards.size();
+        return cards.size(); //How many cards are in the deck
     }
 }

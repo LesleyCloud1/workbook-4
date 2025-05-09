@@ -39,7 +39,7 @@ public class Hand {
         return value;
     }
 
-    // Returns a readable version of the hand for printing
+    //Returns a readable version of the hand for printing
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Card card : cards) {

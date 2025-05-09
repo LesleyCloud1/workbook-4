@@ -30,10 +30,10 @@ public class BlackJackApp {
         int score1 = player1.getHand().getValue();
         int score2 = player2.getHand().getValue();
 
-        System.out.println("\n--- Result ---");
+        System.out.println("\n-Result-");
 
         if (score1 > 21 && score2 > 21) {
-            System.out.println("No winner — both players busted!");
+            System.out.println("No winner, better luck next time!");
         } else if (score1 <= 21 && (score2 > 21 || score1 > score2)) {
             System.out.println(player1.getName() + " wins with " + score1 + " points!");
         } else if (score2 <= 21 && (score1 > 21 || score2 > score1)) {
