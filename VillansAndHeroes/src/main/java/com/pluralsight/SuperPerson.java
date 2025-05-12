@@ -1,4 +1,5 @@
 package com.pluralsight;
+import java.util.Random;
 
 public class SuperPerson {
     /*Attributes of the SuperPerson class.
@@ -10,7 +11,6 @@ public class SuperPerson {
 
     /*Constructor of the class, allows us to create a new SuperPerson object with a specific
     name and health value.*/
-     */
     public SuperPerson(String name, int health) {
         this.name = name; //Assigned the passed 'name' to the class 'name' field.
         this.health = health; //Assigned the passed 'health' to the class 'health' field.
@@ -26,17 +26,26 @@ public class SuperPerson {
     fighting who.*/
     public void fight(SuperPerson opponent) {
         //Print who are we fighting
-        System.out.println(this.name = " is fighting " = opponent.name);
+        int damageAmount = new Random().nextInt(21);
+// displays the opponent we are fighting against
+        System.out.println(this.name + " is fighting " + opponent.name + "!");
+        opponent.takeDamage(damageAmount + this.experiencePoints);
     }
-    public void takeDamage(int damageAmount) {
-        //Subtract the damage amount from current health.
-        //Use Math.max to ensure the result is at least 0.
-        this.health = Math.max(0, this.health - damageAmount);
-    }
-    /*This method returns a text status about the SuperPerson, It includes the name and current
-    health value.*/
-    public String getStatus(){
 
+    public void takeDamage(int damageAmount) {
+
+        // subtract damage amount from health but don't want to set health below 0
+        this.health -= damageAmount;
+
+        if(this.health < 0){
+            this.health = 0;
+        }
+    }
+
+    // method for displaying health
+    public String getStatus() {
+
+        // returns how much health a SuperPerson has left
         return this.name + " has " + this.health + " health left!";
     }
 }
