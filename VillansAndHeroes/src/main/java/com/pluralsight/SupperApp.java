@@ -31,12 +31,12 @@ public class SupperApp {
         /*Create several hero and villian objects, each one has a name, health, and either a power level for heroes
         and evil level for villains. Will determine how strong they are.*/
 
-        SuperHero hero1 = new SuperHero("Captain Lesley", 40, 5);
-        SuperHero hero2 = new SuperHero("Java Jack", 30, 4);
-        SuperVillain villain1 = new SuperVillain("Techy Eric", 35, 3);
-        SuperVillain villain2 = new SuperVillain("Glitch Griffin ", 25, 2);
+        SuperHero hero1 = new SuperHero("Captain Lesley", 100, 20);
+        SuperHero hero2 = new SuperHero("Java Jack", 100, 15);
+        SuperVillain villain1 = new SuperVillain("Techy Eric", 100, 20);
+        SuperVillain villain2 = new SuperVillain("Glitch Griffin ", 100, 15);
 
-        // Add characters to the HashMap
+        //Add characters to the HashMap
         characters.put(hero1.name, hero1);
         characters.put(hero2.name, hero2);
         characters.put(villain1.name, villain1);
@@ -83,8 +83,11 @@ public class SupperApp {
             System.out.println(hero.getStatus());
             System.out.println();
         }
+            hero.printBattleLog();
+            villain.printBattleLog();
 
-        //Show the winner
+
+            //Show the winner
         System.out.println("--- Battle Over ---");
         if (hero.isAlive()) {
             System.out.println("🎉 " + hero.name + " wins the battle!");
@@ -98,7 +101,7 @@ public class SupperApp {
 
         } while (playAgain.equals("y")); // Repeat the game if the user says yes
 
-        // Goodbye message
+        //Goodbye message
         System.out.println("👋 Thanks for playing!");
         scanner.close(); // Always close scanner
     }

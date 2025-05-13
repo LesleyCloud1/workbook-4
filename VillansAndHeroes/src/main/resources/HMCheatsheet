@@ -1,0 +1,56 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapCheatSheet {
+    public static void main(String[] args) {
+        // Create a HashMap that maps character names to roles
+        HashMap<String, String> characters = new HashMap<>();
+
+        // 1. put(key, value) - Add entries
+        characters.put("Captain Lesley", "Hero");
+        characters.put("Techy Eric", "Villain");
+        characters.put("Java Jack", "Hero");
+
+        // 2. get(key) - Retrieve a value by its key
+        System.out.println("Captain Lesley is a " + characters.get("Captain Lesley"));
+
+        // 3. containsKey(key) - Check if a key exists
+        if (characters.containsKey("Java Jack")) {
+            System.out.println("Java Jack is in the map.");
+        }
+
+        // 4. containsValue(value) - Check if a value exists
+        if (characters.containsValue("Villain")) {
+            System.out.println("There is at least one villain.");
+        }
+
+        // 5. remove(key) - Remove an entry
+        characters.remove("Techy Eric");
+        System.out.println("Techy Eric removed from the map.");
+
+        // 6. keySet() - Get all keys
+        System.out.println("All character names:");
+        for (String name : characters.keySet()) {
+            System.out.println("- " + name);
+        }
+
+        // 7. values() - Get all values
+        System.out.println("All roles:");
+        for (String role : characters.values()) {
+            System.out.println("- " + role);
+        }
+
+        // 8. entrySet() - Loop through key-value pairs
+        System.out.println("All character-role pairs:");
+        for (Map.Entry<String, String> entry : characters.entrySet()) {
+            System.out.println(entry.getKey() + " → " + entry.getValue());
+        }
+
+        // 9. size() - Number of entries in the map
+        System.out.println("Total characters: " + characters.size());
+
+        // 10. clear() - Remove all entries
+        characters.clear();
+        System.out.println("Map cleared. Size is now: " + characters.size());
+    }
+}

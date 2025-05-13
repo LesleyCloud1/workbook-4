@@ -26,7 +26,6 @@ public class SuperVillain extends SuperPerson {
     public void fight(SuperPerson opponent) {
         //Create a Random object so we can generate random numbers
         Random rand = new Random();
-
         //Generate a base damage amount from 0 to 3
         int baseDamage = rand.nextInt(4); // rand.nextInt(4) gives a number between 0 (inclusive) and 4 (exclusive)
 
@@ -35,13 +34,14 @@ public class SuperVillain extends SuperPerson {
             // Print a message showing the attack missed
             System.out.println(this.name + " tried to hack the mainframe, but forgot their password! Missed!");
         } else {
-            //If base damage is greater than 0, calculate total damage
-            int totalDamage = baseDamage + this.experiencePoints;
-
             //Deal the damage to the opponent using their takeDamage method
-            opponent.takeDamage(totalDamage);
+            int bonus = getPowerBonus("trap"); //or any item you want
+            int totalDamage = baseDamage + this.experiencePoints + bonus;//If base damage is greater than 0, calculate total damage
 
-            // Unique messages for each villain
+            opponent.takeDamage(totalDamage);//apply damage
+            logHit(opponent); //Log this hit in the battle log
+
+            //Unique messages for each villain
             switch (this.name) {
                 case "Techy Eric":
                     System.out.println(this.name + " opened 100 browser tabs on " + opponent.name +
