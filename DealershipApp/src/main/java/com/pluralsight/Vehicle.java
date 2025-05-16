@@ -1,7 +1,7 @@
 package com.pluralsight;
-
+//Information that describe the vehicle
 public class Vehicle {
-    //Information that describe the vehicle
+    // Fields that describe the vehicle
     private int vin;
     private int year;
     private String make;
@@ -34,11 +34,11 @@ public class Vehicle {
     public int getOdometer() { return odometer; }
     public double getPrice() { return price; }
 
-    //toString() method, this is used to display the vehicle nicely in text form
+    //Converts the vehicle object into a readable string for display
+    @Override
     public String toString() {
         return year + " " + make + " " + model + " (" + vehicleType + "), " +
                 "Color: " + color + ", Odometer: " + odometer + " miles, $" + price;
     }
 }
 
-}
