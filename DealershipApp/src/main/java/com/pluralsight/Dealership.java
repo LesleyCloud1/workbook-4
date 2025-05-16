@@ -154,7 +154,7 @@ public class Dealership {
 
     //returns the whole inventory
     public ArrayList<Vehicle> getAllVehicles(){
-        return inventory;
+        return                                                                                                                                             (ArrayList<Vehicle>) inventory;
     }
 
     // ------------------------------------------------------------------------
@@ -169,4 +169,4 @@ public class Dealership {
 
         inventory.remove(vehicle);
     }
-}}
+}
